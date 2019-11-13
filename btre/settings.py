@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'f@5lc45_@!fpd(_*di!z8tx3u=3ozoj#mi&dn_!jygind8+&oy'
+SECRET_KEY = '+w8@$!kx=%n#i$3)rcv9p!i@oe#z#l(wd^6d!8al#kieuy69_4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,12 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'pages.apps.PagesConfig', #class from pages/apps.py 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
 ]
 
 MIDDLEWARE = [
@@ -54,7 +56,10 @@ ROOT_URLCONF = 'btre.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates') #Base_dir is root directory, where the project is currently saved. join with templates folder
+            # this setting will apps to render templates (ie., pages/views)
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,4 +122,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# when deploying, the collectstatic command (python manage.py collectstatic) will take everything out of the static folder (defined in staticfiles_dirs and puts it into the static root folder
+# this will be the folder where assets are found during production
 STATIC_URL = '/static/'
+
+#directories of static folders
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'btre/static') 
+]
