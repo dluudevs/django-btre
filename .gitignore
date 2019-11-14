@@ -6,8 +6,10 @@ __pycache__/
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
-media
+# root media ignored
+/media 
 venv
+# root static ignored
 /static
 
 
