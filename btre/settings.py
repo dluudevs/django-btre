@@ -31,7 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'pages.apps.PagesConfig', #class from pages/apps.py 
+    'pages.apps.PagesConfig', #PagesConfig is the class from pages/apps.py 
+    'listings.apps.ListingsConfig', #ListigsConfig is the class from listings/apps.py 
+    'realtors.apps.RealtorsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
