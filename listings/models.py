@@ -13,6 +13,8 @@ from realtors.models import Realtor
 class Listing(models.Model):
     # foreign key of another table (Realtor) to form a relationship between realtor and listings
     # second argument, do nothing when to the listing when the associated realtor is deleted
+
+    # the default field selected in realtor's model will show up in admin
     realtor = models.ForeignKey(Realtor, on_delete=models.DO_NOTHING)
     title = models.CharField(max_length=200)
     address = models.CharField(max_length=200)

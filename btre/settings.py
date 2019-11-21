@@ -134,5 +134,11 @@ STATIC_URL = '/static/'
 
 #directories of static folders
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'btre/static') 
+    os.path.join(BASE_DIR, 'btre/static') ,
+
 ]
+
+# Media Folder Settings
+# create folder and url to media folder, similar to the above static directory 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
