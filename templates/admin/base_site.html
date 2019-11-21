@@ -1,0 +1,21 @@
+<!-- this file must be name base_site.html ?  -->
+
+<!-- this is the html that is used in the admin page -->
+{% extends 'admin/base.html' %}
+
+<!-- to use static assets -->
+{% load static %}
+
+<!-- in the base.html file, there is a block called branding. since this file extends base.html, in base.html where there is the block branding, this html will appear instead -->
+{% block branding %}
+    <h1 id="head">
+        <img src="{% static 'img/logo.png' %}" alt="BT Real Estate" height="50" width="80" class="brand_img">
+        Admin Area
+    </h1>
+{% endblock %}
+
+
+{% block extrastyle %}
+    <!-- this is a file that was manually created and not provided by django -->
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+{% endblock %}
