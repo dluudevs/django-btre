@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+    # this app lets us easily add decimal places to the prices from the listings model (in listings.html)
+    'django.contrib.humanize'
 ]
 
 MIDDLEWARE = [
